@@ -33,7 +33,7 @@ PKG_CPPFLAGS =\
 
 PKG_LIBS = \
 	-L$(RWINLIB)/$(TARGET) \
-	-L$(RWINLIB)/lib$(R_ARCH) \
+	-L$(RWINLIB)/lib$(R_ARCH)$(CRT) \
 	-lgeos_c -lgeos
 
 all: clean winlibs
