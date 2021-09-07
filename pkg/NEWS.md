@@ -1,4 +1,6 @@
-# Version 0.5-7 (development, rev. 641-671)
+# Please note that **rgeos** will be retired by the end of 2023, plan transition to sf functions using GEOS at your earliest convenience.
+
+# Version 0.5-7 (development, rev. 641-675)
 
 * adapt to OverlayNG in GEOS 3.9
 
