@@ -1,3 +1,7 @@
+2021-09-07 10:26  rsbivand
+
+	* ChangeLog, DESCRIPTION, NEWS.md, R/AAA.R: tidy
+
 2021-07-23 15:39  rsbivand
 
 	* DESCRIPTION, src/Makevars.ucrt, src/Makevars.win: add UCRT tweak
