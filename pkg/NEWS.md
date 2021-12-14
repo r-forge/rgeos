@@ -2,6 +2,8 @@
 
 # Version 0.5-9 (development, rev. 670-)
 
+* Adapt to UCRT Windows 4.2
+
 # Version 0.5-8 (2021-09-22, rev 676-678)
 
 * Run autoupdate on configure.ac to handle obsolete AC_HELP_STRING etc.
