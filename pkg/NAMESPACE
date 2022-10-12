@@ -6,71 +6,157 @@ importFrom(utils, packageVersion)
 importFrom(stats, optim)
 importFrom(graphics, par, lines, strwidth, strheight, text)
 
-export(createPolygonsComment, createSPComment, set_do_poly_check, get_do_poly_check)
-export(rgeos_extSoftVersion)
-#export(checkPolygonsGEOS)
-#export(checkHolesGPC)
-export(poly_findInBoxGEOS, gUnarySTRtreeQuery, gBinarySTRtreeQuery)
+# packages using exported rgeos functions 2022-08-11 
+
+export(
+ createPolygonsComment, # leaflet maptools rangeBuilder sp
+ createSPComment, # ggOceanMaps inlmisc rgdal
+ set_do_poly_check, # 
+ get_do_poly_check # 
+)
+export(
+ rgeos_extSoftVersion # 
+)
+
+export(
+ poly_findInBoxGEOS, # 
+ gUnarySTRtreeQuery, # maptools prioritizr rangeBuilder
+ gBinarySTRtreeQuery # waver
+)
 
 # sp extension classes
 exportClasses(Ring,SpatialRings, SpatialRingsDataFrame)
-export(Ring,SpatialRings,SpatialRingsDataFrame)
+export(
+ Ring, # 
+ SpatialRings, # 
+ SpatialRingsDataFrame # 
+)
 
 exportClasses(SpatialLinesNULL, SpatialPointsNULL, SpatialPolygonsNULL, SpatialRingsNULL)
 exportClasses(SpatialCollections)
-export(SpatialCollections)
+export(
+ SpatialCollections # 
+)
 
 exportMethods(row.names)
 
 # Utility Functions
-export(getScale,setScale,translate,checkP4S) #,groupID)
-export(version_GEOS, version_GEOS0)
-export(set_RGEOS_dropSlivers, get_RGEOS_dropSlivers, set_RGEOS_warnSlivers,
- get_RGEOS_warnSlivers, set_RGEOS_polyThreshold, get_RGEOS_polyThreshold,
- get_RGEOS_CheckValidity, set_RGEOS_CheckValidity)
+export(
+ getScale, # cleangeo plotdap
+ setScale, # 
+ translate, # 
+ checkP4S # 
+)
+export(
+ version_GEOS, # raster
+ version_GEOS0 # maptools raster
+)
+export(
+ set_RGEOS_dropSlivers, # 
+ get_RGEOS_dropSlivers, # 
+ set_RGEOS_warnSlivers, # 
+ get_RGEOS_warnSlivers, # 
+ set_RGEOS_polyThreshold, # 
+ get_RGEOS_polyThreshold, # 
+ get_RGEOS_CheckValidity, # raster
+ set_RGEOS_CheckValidity # raster
+)
 
 # WKT Functions
-export(readWKT, writeWKT)
+export(
+ readWKT, # bfsMaps BIEN ConR crestr expp MBNMAdose MBNMAtime postGIStools rgbif rpostgis ursa
+ writeWKT # BIEN mregions postGIStools rpostgis sharpshootR
+)
 
 
 # GEOS unary predicate functions
 export(RGEOSisEmpty, RGEOSisValid, RGEOSisSimple, RGEOSisRing)#, RGEOSHasZ)
-export(gIsEmpty, gIsValid, gIsSimple, gIsRing)#, gHasZ)
+export(
+ gIsEmpty, # animalEKF ShapePattern
+ gIsValid, # bcmaps cleangeo GeoFIS ggOceanMaps inlmisc leastcostpath maptools raster sharpshootR ursa
+ gIsSimple, # 
+ gIsRing # 
+)
 
 
 # GEOS binary predicate functions
 export( RGEOSRelate, RGEOSDisjoint, RGEOSTouches, RGEOSIntersects, RGEOSCrosses,
 		RGEOSWithin, RGEOSContains, RGEOSOverlaps, RGEOSEquals, RGEOSEqualsExact)
-export( gRelate, gDisjoint, gTouches, gIntersects, gCrosses,
-		gWithin, gContains, gOverlaps, gEquals, gEqualsExact,
-		gContainsProperly, gCovers, gCoveredBy)
+export(
+ gRelate, # 
+ gDisjoint, # lgcp
+ gTouches, # expp gDefrag gfcanalysis HCV lgcp rcage spatialEco
+ gIntersects, # amt birdring cartograflow dsims DSsim eechidna gfcanalysis inlmisc lakemorpho lgcp lingtypology MazamaSpatialUtils quickPlot rangeBuilder raster rcage shadow spatialEco spatsoc stampr TileManager Watersheds waver wildlifeDI
+ gCrosses, # cleangeo lakemorpho Watersheds
+ gWithin, # lakemorpho quickmapr
+ gContains, # animalEKF eechidna GmAMisc lakemorpho letsR maptools rangeBuilder rcage SpaDES.tools spatialEco voluModel wildlifeDI
+ gOverlaps, # lakemorpho letsR
+ gEquals, # maptools rangeBuilder
+ gEqualsExact, # 
+ gContainsProperly, # amt maptools rangeBuilder sharpshootR
+ gCovers, # rcage spatialEco wildlifeDI
+ gCoveredBy # 
+)
 
 # GEOS misc functions
-export( RGEOSArea, RGEOSLength, RGEOSDistance, RGEOSisWithinDistance, 
-		RGEOSHausdorffDistance)
-export( gArea, gLength, gDistance, gWithinDistance, gNearestPoints)
-export( bbox2SP )
+export( RGEOSArea, RGEOSLength, RGEOSDistance, RGEOSisWithinDistance, RGEOSHausdorffDistance)
+export(
+ gArea, # bivariatemaps eechidna ForestTools gDefrag geocmeans GmAMisc itcSegment LabourMarketAreas lakemorpho leastcostpath letsR MBNMAdose MBNMAtime movecost psda ptools quickmapr quickPlot raptr rcage redlistr RSurvey rTLS ShapePattern spatialEco spatsoc stampr surveillance uavRmp wildlifeDI wux
+ gLength, # bfsMaps geocmeans lakemorpho leastcostpath movecost OasisR quickmapr raster recurse shadow ShapePattern stampr streamDepletr ursa
+ gDistance, # antaresViz contact fieldRS FLightR gDefrag ggOceanMaps GmAMisc inlabru inlmisc maptools OasisR quickmapr rangeBuilder raster SegEnvIneq shadow spatialEco SpatialGraph stampr Watersheds waver
+ gWithinDistance, # FLightR quickmapr spatialEco SpatialGraph
+ gNearestPoints # 
+)
+export(
+ bbox2SP  # 
+)
 
 # GEOS topology functions
 export( RGEOSEnvelope, RGEOSConvexHull, RGEOSBoundary, RGEOSGetCentroid, 
 		RGEOSPointOnSurface, RGEOSLineMerge, RGEOSUnionCascaded)
-export( gEnvelope, gConvexHull, gBoundary, gCentroid, 
-		gPointOnSurface, gLineMerge, gUnionCascaded, gUnaryUnion,
-                gCoverageUnion, gMinumumRotatedRectangle,
-                gMaximumInscribedCircle)
+export(
+ gEnvelope, # stampr
+ gConvexHull, # amt GeoFIS gfcanalysis GmAMisc ipdw itcSegment mapmisc rangeBuilder rcage shadow stampr
+ gBoundary, # leastcostpath Watersheds wildlifeDI
+ gCentroid,  # atakrig biosurvey ForestTools geogrid gfcanalysis hierarchicalDS hypergate letsR MazamaSpatialUtils MetaLandSim OasisR rangemap raptr rcage SegEnvIneq shadow stampr SurfaceTortoise TileManager Watersheds
+ gPointOnSurface, # gDefrag MazamaSpatialUtils
+ gLineMerge, # gDefrag shadow sp
+ gUnionCascaded, # adehabitatHR birdring briskaR cleangeo expp maptools raster
+ gUnaryUnion, # amt ENMTools excursions ForestTools gDefrag HDSpatialScan hypergate inlmisc leastcostpath lgcp lingtypology maptools rangemap raster shadow sp stampr surveillance TileManager uavRmp ursa waver
+ gCoverageUnion, # 
+ gMinumumRotatedRectangle, # 
+ gMaximumInscribedCircle # 
+)
 
-export(	gSimplify, gPolygonize, gDelaunayTriangulation, gNode)
+export(
+ gSimplify, # eechidna FLightR GADMTools ggOceanMaps inlmisc mapmisc maptools oceanic rangemap red SeuratObject stampr trajectories ursa
+ gPolygonize, # hypergate leastcostpath
+ gDelaunayTriangulation, # 
+ gNode # hypergate leastcostpath
+)
 
-export( gMakeValid)
+export(
+ gMakeValid # 
+)
 		
 # GEOS binary topology functions
-export( gDifference, gSymdifference, gIntersection, gUnion)# RSB FIXME
+export(
+ gDifference, # birdring briskaR cleangeo excursions FRK gDefrag inlmisc lakemorpho leastcostpath mapmisc rangeBuilder raster rTLS Rtrack spatialEco stampr SurfaceTortoise ursa voluModel wildlifeDI
+ gSymdifference, # ursa
+ gIntersection, # animalEKF AQuadtree birdring bRacatus cleangeo DivE DSsim eechidna expp FedData FRK gDefrag ggOceanMaps inlmisc LabourMarketAreas lakemorpho leastcostpath lgcp mapmisc mapsRinteractive maptools Momocs OasisR osmplotr psda ptools rangeBuilder rangemap raster recurse red rtop secrlinear shadow sp SpatialGraph spatsoc stampr SubgrPlots SurfaceTortoise surveillance ursa voluModel waver wildlifeDI wux
+ gUnion # FLightR gDefrag inlmisc RSurvey rTLS shadow ursa voluModel
+)# RSB FIXME
 
 # GEOS buffer functions
-export( RGEOSBuffer, gBuffer )
+export( RGEOSBuffer,
+ gBuffer  # amt bcmaps BiodiversityR biosurvey bRacatus briskaR cleangeo ConR CoordinateCleaner DSsim dynatopGIS envi expp FLightR FRK geoviz GmAMisc hero hypervolume inlmisc itcSegment lakemorpho leastcostpath lingtypology mapmisc MazamaSpatialUtils NetLogoR phyloregion rangeBuilder rangemap raster secrlinear shadow ShapePattern sharpshootR spatialEco spatsoc spatsurv stampr uavRmp ursa Watersheds
+)
 
 # GEOS linearref functions
-export(gProject, gInterpolate)
+export(
+ gProject, # 
+ gInterpolate # mapmisc
+)
 
 
 # gpclib shadows
@@ -78,13 +164,36 @@ export(gProject, gInterpolate)
 #importFrom(graphics, plot)
 
 exportClasses("gpc.poly", "gpc.poly.nohole")
-exportMethods("show", "get.bbox", "plot", "intersect", "union", "symdiff",
-              "setdiff", "[", "append.poly", "scale.poly", "area.poly",
-              "get.pts", "coerce", "tristrip", "triangulate")
+exportMethods(
+ "show",
+ "get.bbox",
+ "plot", # SubgrPlots
+ "intersect", # muHVT
+ "union",
+ "symdiff",
+ "setdiff",
+ "[",
+ "append.poly",
+ "scale.poly",
+ "area.poly",
+ "get.pts", # RSurvey
+ "coerce",
+ "tristrip",
+ "triangulate"
+)
 
-export("read.polyfile", "write.polyfile")
+export(
+ "read.polyfile", # RSurvey
+ "write.polyfile" # RSurvey
+)
 
-export(polygonsLabel)
+export(
+ polygonsLabel # 
+)
 
-export(overGeomGeom) # needed by sp::overMultiPoints
-export(overGeomGeomDF) # needed by sp::overMultiPoints
+export(
+ overGeomGeom # sp
+) # needed by sp::overMultiPoints
+export(
+ overGeomGeomDF # sp
+) # needed by sp::overMultiPoints

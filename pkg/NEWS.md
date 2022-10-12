@@ -1,8 +1,12 @@
 # Please note that **rgeos** will be retired by the end of 2023, plan transition to sf functions using GEOS at your earliest convenience.
 
-# Version 0.5-10 (development, rev 685-)
+# Version 0.6-1 (development, rev 685-)
+
+* commence deprecation
 
 * Update src/Makevars.win to GEOS 3.10.2 for R < 4.2
+
+* fix -Wstrict-prototypes problems
 
 # Version 0.5-9 (2021-12-15, rev. 679-684)
 
