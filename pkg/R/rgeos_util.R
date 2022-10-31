@@ -4,7 +4,7 @@ poly_findInBoxGEOS <- function(spl, as_points=TRUE) {
     stopifnot(!is.na(as_points))
     pls <- slot(spl, "polygons")
     res <- .Call("rgeos_poly_findInBox", .RGEOS_HANDLE, pls, as_points,
-       PACKAGE="rgeos")
+       PACKAGE="rgeos")/
     res
 }
 
@@ -126,7 +126,7 @@ checkP4S = function(p4s) {
     if (length(p4s) != 1)
         stop("proj4string must be of length 1")
     
-    if ( class(p4s) != "CRS") {
+    if ( !inherits(p4s, "CRS")) {
         stop("proj4string has invalid class")
     }
     
