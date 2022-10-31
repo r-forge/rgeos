@@ -4,7 +4,7 @@ poly_findInBoxGEOS <- function(spl, as_points=TRUE) {
     stopifnot(!is.na(as_points))
     pls <- slot(spl, "polygons")
     res <- .Call("rgeos_poly_findInBox", .RGEOS_HANDLE, pls, as_points,
-       PACKAGE="rgeos")/
+       PACKAGE="rgeos")
     res
 }
 
