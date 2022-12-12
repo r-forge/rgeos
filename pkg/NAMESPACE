@@ -6,11 +6,12 @@ importFrom(utils, packageVersion)
 importFrom(stats, optim)
 importFrom(graphics, par, lines, strwidth, strheight, text)
 
-# packages using exported rgeos functions 2022-08-11 
+# packages using exported rgeos functions 2022-08-11 and 2022-12-06
+# moved after deprecation date if no longer present at latest pkgapi check
 
 export(
- createPolygonsComment, # leaflet maptools rangeBuilder sp
- createSPComment, # ggOceanMaps inlmisc rgdal
+ createPolygonsComment, # leaflet maptools (gone 2212 rangeBuilder) (new 2212 occTest) sp
+ createSPComment, # ggOceanMaps (gone 2212 inlmisc) rgdal
  set_do_poly_check, # 
  get_do_poly_check # 
 )
@@ -20,7 +21,7 @@ export(
 
 export(
  poly_findInBoxGEOS, # 
- gUnarySTRtreeQuery, # maptools prioritizr rangeBuilder
+ gUnarySTRtreeQuery, # maptools (new 2212 occTest) (gone 2212 prioritizr) (gone 2212 rangeBuilder)
  gBinarySTRtreeQuery # waver
 )
 
@@ -42,14 +43,14 @@ exportMethods(row.names)
 
 # Utility Functions
 export(
- getScale, # cleangeo plotdap
+ getScale, # cleangeo (gone 2212 plotdap)
  setScale, # 
  translate, # 
  checkP4S # 
 )
 export(
- version_GEOS, # raster
- version_GEOS0 # maptools raster
+ version_GEOS, #  (gone 2212 raster)
+ version_GEOS0 # maptools  (gone 2212 raster)
 )
 export(
  set_RGEOS_dropSlivers, # 
@@ -58,8 +59,8 @@ export(
  get_RGEOS_warnSlivers, # 
  set_RGEOS_polyThreshold, # 
  get_RGEOS_polyThreshold, # 
- get_RGEOS_CheckValidity, # raster
- set_RGEOS_CheckValidity # raster
+ get_RGEOS_CheckValidity, #  (gone 2212 raster)
+ set_RGEOS_CheckValidity #  (gone 2212 raster)
 )
 
 # WKT Functions
@@ -73,7 +74,7 @@ export(
 export(RGEOSisEmpty, RGEOSisValid, RGEOSisSimple, RGEOSisRing)#, RGEOSHasZ)
 export(
  gIsEmpty, # animalEKF ShapePattern
- gIsValid, # bcmaps cleangeo GeoFIS ggOceanMaps inlmisc leastcostpath maptools raster sharpshootR ursa
+ gIsValid, # bcmaps cleangeo GeoFIS ggOceanMaps inlmisc leastcostpath maptools (gone 2212 raster) (gone 2212 sharpshootR) ursa
  gIsSimple, # 
  gIsRing # 
 )
@@ -85,26 +86,26 @@ export( RGEOSRelate, RGEOSDisjoint, RGEOSTouches, RGEOSIntersects, RGEOSCrosses,
 export(
  gRelate, # 
  gDisjoint, # lgcp
- gTouches, # expp gDefrag gfcanalysis HCV lgcp rcage spatialEco
- gIntersects, # amt birdring cartograflow dsims DSsim eechidna gfcanalysis inlmisc lakemorpho lgcp lingtypology MazamaSpatialUtils quickPlot rangeBuilder raster rcage shadow spatialEco spatsoc stampr TileManager Watersheds waver wildlifeDI
+ gTouches, # expp gDefrag gfcanalysis HCV lgcp rcage (gone 2212 spatialEco)
+ gIntersects, # amt birdring cartograflow dsims eechidna gfcanalysis (gone 2212 inlmisc) lakemorpho lgcp lingtypology (new 2212 occTest) (gone 2212 MazamaSpatialUtils) quickPlot (gone 2212 rangeBuilder) (gone 2212 raster) rcage shadow (gone 2212 spatialEco) spatsoc stampr (gone 2212 TileManager) Watersheds waver (gone 2212 wildlifeDI)
  gCrosses, # cleangeo lakemorpho Watersheds
  gWithin, # lakemorpho quickmapr
- gContains, # animalEKF eechidna GmAMisc lakemorpho letsR maptools rangeBuilder rcage SpaDES.tools spatialEco voluModel wildlifeDI
+ gContains, # animalEKF eechidna GmAMisc lakemorpho letsR maptools (new 2212 occTest) (gone 2212 rangeBuilder) rcage (gone 2212 SpaDES.tools) (gone 2212 spatialEco) (gone 2212 voluModel) (gone 2212 wildlifeDI)
  gOverlaps, # lakemorpho letsR
- gEquals, # maptools rangeBuilder
+ gEquals, # maptools (new 2212 occTest) (gone 2212 rangeBuilder)
  gEqualsExact, # 
- gContainsProperly, # amt maptools rangeBuilder sharpshootR
- gCovers, # rcage spatialEco wildlifeDI
+ gContainsProperly, # amt maptools (new 2212 occTest) (gone 2212 rangeBuilder) (gone 2212 sharpshootR)
+ gCovers, # rcage (gone 2212 spatialEco) (gone 2212 wildlifeDI)
  gCoveredBy # 
 )
 
 # GEOS misc functions
 export( RGEOSArea, RGEOSLength, RGEOSDistance, RGEOSisWithinDistance, RGEOSHausdorffDistance)
 export(
- gArea, # bivariatemaps eechidna ForestTools gDefrag geocmeans GmAMisc itcSegment LabourMarketAreas lakemorpho leastcostpath letsR MBNMAdose MBNMAtime movecost psda ptools quickmapr quickPlot raptr rcage redlistr RSurvey rTLS ShapePattern spatialEco spatsoc stampr surveillance uavRmp wildlifeDI wux
- gLength, # bfsMaps geocmeans lakemorpho leastcostpath movecost OasisR quickmapr raster recurse shadow ShapePattern stampr streamDepletr ursa
- gDistance, # antaresViz contact fieldRS FLightR gDefrag ggOceanMaps GmAMisc inlabru inlmisc maptools OasisR quickmapr rangeBuilder raster SegEnvIneq shadow spatialEco SpatialGraph stampr Watersheds waver
- gWithinDistance, # FLightR quickmapr spatialEco SpatialGraph
+ gArea, # bivariatemaps eechidna ForestTools gDefrag (new 2212 geocmeans) GmAMisc itcSegment LabourMarketAreas lakemorpho leastcostpath letsR MBNMAdose MBNMAtime movecost psda ptools quickmapr quickPlot raptr rcage redlistr (gone 2212 RSurvey) (gone 2212 rTLS) ShapePattern (gone 2212 spatialEco) spatsoc stampr surveillance uavRmp (gone 2212 wildlifeDI) wux
+ gLength, # bfsMaps (gone 2212 geocmeans) lakemorpho leastcostpath movecost OasisR quickmapr (gone 2212 raster) recurse shadow ShapePattern stampr streamDepletr ursa
+ gDistance, # antaresViz (gone 2212 contact) fieldRS FLightR gDefrag ggOceanMaps GmAMisc (gone 2212 inlabru) (gone 2212 inlmisc) maptools OasisR quickmapr (gone 2212 rangeBuilder) (gone 2212 raster) SegEnvIneq shadow (gone 2212 spatialEco) SpatialGraph stampr Watersheds waver
+ gWithinDistance, # FLightR quickmapr (gone 2212 spatialEco) SpatialGraph
  gNearestPoints # 
 )
 export(
@@ -116,20 +117,20 @@ export( RGEOSEnvelope, RGEOSConvexHull, RGEOSBoundary, RGEOSGetCentroid,
 		RGEOSPointOnSurface, RGEOSLineMerge, RGEOSUnionCascaded)
 export(
  gEnvelope, # stampr
- gConvexHull, # amt GeoFIS gfcanalysis GmAMisc ipdw itcSegment mapmisc rangeBuilder rcage shadow stampr
- gBoundary, # leastcostpath Watersheds wildlifeDI
- gCentroid,  # atakrig biosurvey ForestTools geogrid gfcanalysis hierarchicalDS hypergate letsR MazamaSpatialUtils MetaLandSim OasisR rangemap raptr rcage SegEnvIneq shadow stampr SurfaceTortoise TileManager Watersheds
- gPointOnSurface, # gDefrag MazamaSpatialUtils
+ gConvexHull, # amt GeoFIS gfcanalysis GmAMisc ipdw itcSegment mapmisc (gone 2212 rangeBuilder) rcage shadow stampr
+ gBoundary, # leastcostpath Watersheds (gone 2212 wildlifeDI)
+ gCentroid,  # atakrig biosurvey ForestTools geogrid gfcanalysis hierarchicalDS hypergate letsR (gone 2212 MazamaSpatialUtils) MetaLandSim (new 2212 micromapST) OasisR rangemap raptr rcage SegEnvIneq shadow stampr SurfaceTortoise (gone 2212 TileManager) Watersheds
+ gPointOnSurface, # gDefrag (gone 2212 MazamaSpatialUtils)
  gLineMerge, # gDefrag shadow sp
- gUnionCascaded, # adehabitatHR birdring briskaR cleangeo expp maptools raster
- gUnaryUnion, # amt ENMTools excursions ForestTools gDefrag HDSpatialScan hypergate inlmisc leastcostpath lgcp lingtypology maptools rangemap raster shadow sp stampr surveillance TileManager uavRmp ursa waver
+ gUnionCascaded, # adehabitatHR birdring briskaR cleangeo expp maptools (gone 2212 raster)
+ gUnaryUnion, # amt ENMTools excursions ForestTools gDefrag HDSpatialScan hypergate (gone 2212 inlmisc) leastcostpath lgcp lingtypology maptools rangemap (gone 2212 raster) shadow sp stampr surveillance (gone 2212 TileManager) uavRmp ursa waver
  gCoverageUnion, # 
  gMinumumRotatedRectangle, # 
  gMaximumInscribedCircle # 
 )
 
 export(
- gSimplify, # eechidna FLightR GADMTools ggOceanMaps inlmisc mapmisc maptools oceanic rangemap red SeuratObject stampr trajectories ursa
+ gSimplify, # eechidna FLightR (gone 2212 GADMTools) ggOceanMaps (gone 2212 inlmisc) mapmisc maptools oceanic rangemap red SeuratObject stampr trajectories ursa
  gPolygonize, # hypergate leastcostpath
  gDelaunayTriangulation, # 
  gNode # hypergate leastcostpath
@@ -141,15 +142,15 @@ export(
 		
 # GEOS binary topology functions
 export(
- gDifference, # birdring briskaR cleangeo excursions FRK gDefrag inlmisc lakemorpho leastcostpath mapmisc rangeBuilder raster rTLS Rtrack spatialEco stampr SurfaceTortoise ursa voluModel wildlifeDI
- gSymdifference, # ursa
- gIntersection, # animalEKF AQuadtree birdring bRacatus cleangeo DivE DSsim eechidna expp FedData FRK gDefrag ggOceanMaps inlmisc LabourMarketAreas lakemorpho leastcostpath lgcp mapmisc mapsRinteractive maptools Momocs OasisR osmplotr psda ptools rangeBuilder rangemap raster recurse red rtop secrlinear shadow sp SpatialGraph spatsoc stampr SubgrPlots SurfaceTortoise surveillance ursa voluModel waver wildlifeDI wux
- gUnion # FLightR gDefrag inlmisc RSurvey rTLS shadow ursa voluModel
+ gDifference, # birdring briskaR cleangeo excursions FRK gDefrag (gone 2212 inlmisc) lakemorpho leastcostpath mapmisc (new 2212 micromapST) (gone 2212 rangeBuilder) (gone 2212 raster) (gone 2212 rTLS) Rtrack (gone 2212 spatialEco) stampr SurfaceTortoise ursa (gone 2212 voluModel) (gone 2212 wildlifeDI) # deprecated 2022-12-12
+ gSymdifference, # ursa # deprecated 2022-12-12
+ gIntersection, # animalEKF AQuadtree birdring bRacatus (new 2212 changeRangeR) cleangeo DivE (gone 2212 DSsim) eechidna expp (gone 2212 FedData) FRK gDefrag ggOceanMaps (gone 2212 inlmisc) LabourMarketAreas lakemorpho leastcostpath lgcp mapmisc mapsRinteractive maptools Momocs OasisR osmplotr psda ptools (gone 2212 rangeBuilder) rangemap (gone 2212 raster) recurse red rtop secrlinear shadow sp SpatialGraph spatsoc stampr SubgrPlots SurfaceTortoise surveillance ursa (gone 2212 voluModel) waver (gone 2212 wildlifeDI) wux # deprecated 2022-12-12
+ gUnion # FLightR gDefrag (gone 2212 inlmisc) (gone 2212 RSurvey) (gone 2212 rTLS) shadow ursa (gone 2212 voluModel) # deprecated 2022-12-12
 )# RSB FIXME
 
 # GEOS buffer functions
 export( RGEOSBuffer,
- gBuffer  # amt bcmaps BiodiversityR biosurvey bRacatus briskaR cleangeo ConR CoordinateCleaner DSsim dynatopGIS envi expp FLightR FRK geoviz GmAMisc hero hypervolume inlmisc itcSegment lakemorpho leastcostpath lingtypology mapmisc MazamaSpatialUtils NetLogoR phyloregion rangeBuilder rangemap raster secrlinear shadow ShapePattern sharpshootR spatialEco spatsoc spatsurv stampr uavRmp ursa Watersheds
+ gBuffer  # amt bcmaps BiodiversityR biosurvey bRacatus briskaR (new 2212 changeRangeR) cleangeo ConR CoordinateCleaner (gone 2212 DSsim) (gone 2212 dynatopGIS) envi expp FLightR FRK geoviz (new 2212 ggvoronoi) GmAMisc hero hypervolume (gone 2212 inlmisc) itcSegment lakemorpho leastcostpath lingtypology mapmisc (gone 2212 MazamaSpatialUtils) (new 2212 micromapST) (gone 2212 NetLogoR) phyloregion (gone 2212 rangeBuilder) rangemap (gone 2212 raster) secrlinear shadow ShapePattern sharpshootR (gone 2212 spatialEco) spatsoc spatsurv stampr uavRmp ursa Watersheds # deprecated 2022-12-12
 )
 
 # GEOS linearref functions
@@ -168,7 +169,7 @@ exportMethods(
  "show",
  "get.bbox",
  "plot", # SubgrPlots
- "intersect", # muHVT
+ "intersect", # (new 2212 ggvoronoi) muHVT
  "union",
  "symdiff",
  "setdiff",
@@ -176,15 +177,15 @@ exportMethods(
  "append.poly",
  "scale.poly",
  "area.poly",
- "get.pts", # RSurvey
+ "get.pts", # (gone 2212 RSurvey)
  "coerce",
  "tristrip",
  "triangulate"
 )
 
 export(
- "read.polyfile", # RSurvey
- "write.polyfile" # RSurvey
+ "read.polyfile", # (gone 2212 RSurvey)
+ "write.polyfile" # (gone 2212 RSurvey)
 )
 
 export(
