@@ -95,12 +95,7 @@ version_sp_linkingTo <- function() {
     .Call("rgeos_sp_linkingTo_version")
 }
 
-.onLoad <- function(lib, pkg) {
-#  require(methods, quietly = TRUE, warn.conflicts = FALSE)
-#  require("sp")
-#  require("stringr")
-#  library.dynam('rgeos', pkg, lib)
-
+load_stuff <- function() {
   set_RGEOS_HANDLE(init_RGEOS())
   if (!isTRUE(all.equal(version_GEOS(TRUE), version_GEOS(FALSE),
     check.attributes=FALSE))) {
@@ -139,6 +134,11 @@ version_sp_linkingTo <- function() {
 
   Smess <- paste(Smess, "Polygon checking:", get_do_poly_check(), "\n")
   packageStartupMessage(Smess, appendLF = TRUE)
+
+}
+
+.onLoad <- function(lib, pkg) {
+  load_stuff()
 }
 
 .onAttach <- function(lib, pkg) {
