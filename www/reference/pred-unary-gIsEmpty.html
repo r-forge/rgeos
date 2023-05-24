@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,15 +47,17 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gIsEmpty</span><span class="op">(</span><span class="va">spgeom</span>, byid <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="va">spgeom</span>, byid <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>spgeom</dt>
 <dd><p>sp object as defined in package sp</p></dd>
-<dt>byid</dt>
+
+  <dt>byid</dt>
 <dd><p>Logical determining if the function should be applied across subgeometries (TRUE) or the entire object (FALSE)</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -78,20 +80,20 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error : Unable to parse: POINT EMPTY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GEOS reported: "rgeos_geospoint2SpatialPoints: empty point found"</span>
-<span class="r-in"><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1 1)"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1 1)"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error : Unable to parse: LINESTRING EMPTY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GEOS reported: "rgeos_geosline2SpatialLines: empty line found"</span>
-<span class="r-in"><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING(0 0,1 1)"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING(0 0,1 1)"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON EMPTY"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error : Unable to parse: POLYGON EMPTY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GEOS reported: "rgeos_geospolygon2Polygons: empty Polygons object"</span>
-<span class="r-in"><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,1 0,1 1,0 1,0 0))"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gIsEmpty</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,1 0,1 1,0 1,0 0))"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
 </code></pre></div>
     </div>
@@ -107,7 +109,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,22 +47,27 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gBoundary</span><span class="op">(</span><span class="va">spgeom</span>, byid<span class="op">=</span><span class="cn">FALSE</span>, id <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gBoundary</span><span class="op">(</span><span class="va">spgeom</span>, byid<span class="op">=</span><span class="cn">FALSE</span>, id <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>spgeom</dt>
 <dd><p>sp object as defined in package sp</p></dd>
-<dt>byid</dt>
+
+  <dt>byid</dt>
 <dd><p>Logical determining if the function should be applied across subgeometries (TRUE) or the entire object (FALSE)</p></dd>
-<dt>id</dt>
+
+  <dt>id</dt>
 <dd><p>Character vector defining id labels for the resulting geometries, if unspecified returned geometries will be labeled based on their parent geometries' labels.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Depending of the class of the spgeom the returned results will differ.
-Based on the documentation of JTS (on which GEOS is based) the following outputs are expected:</p><table class="table table"><tr><td>Point</td><td>empty GeometryCollection</td></tr><tr><td>MultiPoint</td><td>empty GeometryCollection</td></tr><tr><td>LineString</td><td>if closed: empty MultiPoint
+    <p>Depending of the class of the spgeom the returned results will differ.</p>
+
+
+<p>Based on the documentation of JTS (on which GEOS is based) the following outputs are expected:</p><table class="table table"><tr><td>Point</td><td>empty GeometryCollection</td></tr><tr><td>MultiPoint</td><td>empty GeometryCollection</td></tr><tr><td>LineString</td><td>if closed: empty MultiPoint
 						if not closed: MultiPoint containing the two endpoints.</td></tr><tr><td>MultiLineString</td><td>MultiPoint obtained by applying the Mod-2 rule to the boundaries of the element LineStrings</td></tr><tr><td>LinearRing</td><td>empty MultiPoint</td></tr><tr><td>Polygon</td><td>MultiLineString containing the LinearRings of the shell and holes, in that order (SFS 2.1.10)</td></tr><tr><td>MultiPolygon</td><td>MultiLineString containing the LinearRings for the boundaries of the element polygons, in the same order as they occur in the MultiPolygon (SFS 2.1.12/JTS)</td></tr><tr><td>GeometryCollection</td><td>The boundary of an arbitrary collection of geometries whose interiors are disjoint consist of geometries drawn from the boundaries of the element geometries by application of the Mod-2 rule (SFS Section 2.1.13.1)</td></tr></table><p>The mod-2 rule states that for a multiline a point is on the boundary if and only if it on the boundary of an odd number of subgeometries of the multiline (See example below).</p>
     </div>
     <div id="author">
@@ -79,32 +84,32 @@ Based on the documentation of JTS (on which GEOS is based) the following outputs
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,10 0,10 10,0 10,0 0))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">b</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>,col<span class="op">=</span><span class="st">'black'</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b</span>,col<span class="op">=</span><span class="st">'red'</span>,lwd<span class="op">=</span><span class="fl">3</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,10 0,10 10,0 10,0 0))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">b</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>,col<span class="op">=</span><span class="st">'black'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b</span>,col<span class="op">=</span><span class="st">'red'</span>,lwd<span class="op">=</span><span class="fl">3</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="topo-unary-gBoundary-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># mod-2 rule example</span></span>
-<span class="r-in"><span class="va">x1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">x2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">x3</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2),(2 2,2 4))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">x4</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2),(2 2,2 4),(2 2,4 4))"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">b1</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x1</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">b2</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x2</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">b3</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x3</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">b4</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x4</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x1</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b1</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b2</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x3</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b3</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x4</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b4</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># mod-2 rule example</span></span></span>
+<span class="r-in"><span><span class="va">x1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x3</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2),(2 2,2 4))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x4</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((2 2,2 0),(2 2,0 2),(2 2,4 2),(2 2,2 4),(2 2,4 4))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">b1</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">b2</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x2</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">b3</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x3</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">b4</span> <span class="op">=</span> <span class="fu">gBoundary</span><span class="op">(</span><span class="va">x4</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x1</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b1</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b2</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x3</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b3</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x4</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">b4</span>,pch<span class="op">=</span><span class="fl">16</span>,col<span class="op">=</span><span class="st">'red'</span>,add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="topo-unary-gBoundary-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -119,7 +124,7 @@ Based on the documentation of JTS (on which GEOS is based) the following outputs
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

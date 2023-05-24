@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,17 +47,20 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gNearestPoints</span><span class="op">(</span><span class="va">spgeom1</span>, <span class="va">spgeom2</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gNearestPoints</span><span class="op">(</span><span class="va">spgeom1</span>, <span class="va">spgeom2</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>spgeom1, spgeom2</dt>
 <dd><p>sp objects as defined in package sp.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The closest points of the two geometries or NULL on exception.
+    
+
+<p>The closest points of the two geometries or NULL on exception.
   The first point comes from spgeom1 geometry and the second point comes
   from spgeom2.</p>
     </div>
@@ -72,13 +75,13 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((34 54, 60 34), (0 10, 50 10, 100 50))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(30 0, 100 30)"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">g1</span>, pch<span class="op">=</span><span class="fl">4</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">g2</span>, add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">gNearestPoints</span><span class="op">(</span><span class="va">g1</span>, <span class="va">g2</span><span class="op">)</span>, add<span class="op">=</span><span class="cn">TRUE</span>, col<span class="op">=</span><span class="st">"red"</span>, pch<span class="op">=</span><span class="fl">7</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTILINESTRING((34 54, 60 34), (0 10, 50 10, 100 50))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(30 0, 100 30)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">g1</span>, pch<span class="op">=</span><span class="fl">4</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">g2</span>, add<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">gNearestPoints</span><span class="op">(</span><span class="va">g1</span>, <span class="va">g2</span><span class="op">)</span>, add<span class="op">=</span><span class="cn">TRUE</span>, col<span class="op">=</span><span class="st">"red"</span>, pch<span class="op">=</span><span class="fl">7</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="misc-gNearestPoints-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="misc-gDistance.html">gDistance</a></span><span class="op">(</span><span class="va">g1</span>, <span class="va">g2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="misc-gDistance.html">gDistance</a></span><span class="op">(</span><span class="va">g1</span>, <span class="va">g2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
 </code></pre></div>
     </div>
@@ -94,7 +97,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

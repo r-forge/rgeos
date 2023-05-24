@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,28 +47,38 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">SpatialCollections</span><span class="op">(</span>points<span class="op">=</span><span class="cn">NULL</span>, lines<span class="op">=</span><span class="cn">NULL</span>, rings<span class="op">=</span><span class="cn">NULL</span>, polygons<span class="op">=</span><span class="cn">NULL</span>,
- plotOrder<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span>, proj4string<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">SpatialCollections</span><span class="op">(</span>points<span class="op">=</span><span class="cn">NULL</span>, lines<span class="op">=</span><span class="cn">NULL</span>, rings<span class="op">=</span><span class="cn">NULL</span>, polygons<span class="op">=</span><span class="cn">NULL</span>,</span>
+<span> plotOrder<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span>, proj4string<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>points</dt>
 <dd><p>list with objects of class <a href="https://rdrr.io/pkg/sp/man/SpatialPoints-class.html" class="external-link">SpatialPoints-class</a></p></dd>
+
 <dt>lines</dt>
 <dd><p>list with objects of class <a href="https://rdrr.io/pkg/sp/man/SpatialLines-class.html" class="external-link">SpatialLines-class</a></p></dd>
+
 <dt>rings</dt>
 <dd><p>list with objects of class <a href="class-SpatialRings.html">SpatialRings-class</a></p></dd>
+
 <dt>polygons</dt>
 <dd><p>list with objects of class <a href="https://rdrr.io/pkg/sp/man/SpatialPolygons-class.html" class="external-link">SpatialPolygons-class</a></p></dd>
+
 <dt>plotOrder</dt>
 <dd><p>numeric vector of length 4 that determines the order in which the geometries will be plotted. By default polygons will be plotted followed by rings, then lines and finally points.</p></dd>
+
 <dt>proj4string</dt>
 <dd><p>Object of class <code>"CRS"</code> holding a valid proj4 string</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code>SpatialCollections</code> returns object of class <code>SpatialCollections</code></p>
+    
+
+<p><code>SpatialCollections</code> returns object of class <code>SpatialCollections</code></p>
+
+
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -87,7 +97,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,35 +47,40 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getScale</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">setScale</span><span class="op">(</span>scale<span class="op">=</span><span class="fl">100000000</span><span class="op">)</span>
-  <span class="fu">translate</span><span class="op">(</span><span class="va">spgeom</span><span class="op">)</span>
-  <span class="fu">checkP4S</span><span class="op">(</span><span class="va">p4s</span><span class="op">)</span>
-        <span class="fu">version_GEOS</span><span class="op">(</span>runtime <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-        <span class="fu">rgeos_extSoftVersion</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">version_GEOS0</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="va">value</span><span class="op">)</span>
-        <span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="va">value</span><span class="op">)</span>
-        <span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="va">value</span><span class="op">)</span>
-        <span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">get_RGEOS_CheckValidity</span><span class="op">(</span><span class="op">)</span>
-        <span class="fu">set_RGEOS_CheckValidity</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getScale</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">setScale</span><span class="op">(</span>scale<span class="op">=</span><span class="fl">100000000</span><span class="op">)</span></span>
+<span>  <span class="fu">translate</span><span class="op">(</span><span class="va">spgeom</span><span class="op">)</span></span>
+<span>  <span class="fu">checkP4S</span><span class="op">(</span><span class="va">p4s</span><span class="op">)</span></span>
+<span>        <span class="fu">version_GEOS</span><span class="op">(</span>runtime <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>        <span class="fu">rgeos_extSoftVersion</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">version_GEOS0</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span>
+<span>        <span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span>
+<span>        <span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span>
+<span>        <span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">get_RGEOS_CheckValidity</span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="fu">set_RGEOS_CheckValidity</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>scale</dt>
 <dd><p>Numeric value determining the precision of translated geometries</p></dd>
-<dt>spgeom</dt>
+
+  <dt>spgeom</dt>
 <dd><p>sp object as defined in package sp</p></dd>
-<dt>p4s</dt>
+
+  <dt>p4s</dt>
 <dd><p>Either a character string or an object of class <code>CRS</code></p></dd>
-<dt>runtime</dt>
+
+  <dt>runtime</dt>
 <dd><p>default TRUE; if FALSE, installation GEOS version</p></dd>
-<dt>value</dt>
+
+  <dt>value</dt>
 <dd><p>the value to be passed to an RGEOS option in its environment</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -93,98 +98,103 @@ set_RGEOS_CheckValidity takes an integer 0:2, 0L is no operation, 1L is check va
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     x   y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.5 1.5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System (CRS) arguments: NA </span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="co"># With scale set to 1, the following point will be rounded</span></span>
-<span class="r-in">  <span class="fu">setScale</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="co"># With scale set to 1, the following point will be rounded</span></span></span>
+<span class="r-in"><span>  <span class="fu">setScale</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   x y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 2 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System (CRS) arguments: NA </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="fu">setScale</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="fu">setScale</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POINT(1.5 1.5)"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     x   y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.5 1.5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System (CRS) arguments: NA </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="fu">getScale</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="fu">getScale</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-in">  <span class="co"># Set scale option back to default</span></span>
-<span class="r-in">  <span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co"># scale option only affect objects when they are translated through rgeos</span></span>
-<span class="r-in">  <span class="fu">setScale</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/" class="external-link">sp</a></span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/sp/man/SpatialPoints.html" class="external-link">SpatialPoints</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1.5</span>,y<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="co"># Set scale option back to default</span></span></span>
+<span class="r-in"><span>  <span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co"># scale option only affect objects when they are translated through rgeos</span></span></span>
+<span class="r-in"><span>  <span class="fu">setScale</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/" class="external-link">sp</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/sp/man/SpatialPoints.html" class="external-link">SpatialPoints</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1.5</span>,y<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        x   y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1,] 1.5 1.5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System (CRS) arguments: NA </span>
-<span class="r-in">  <span class="fu">translate</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/pkg/sp/man/SpatialPoints.html" class="external-link">SpatialPoints</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1.5</span>,y<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span><span class="op">)</span> <span class="op">)</span></span>
+<span class="r-in"><span>  <span class="fu">translate</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/pkg/sp/man/SpatialPoints.html" class="external-link">SpatialPoints</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1.5</span>,y<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span><span class="op">)</span> <span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   x y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 2 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System (CRS) arguments: NA </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">        <span class="co"># added example of scale impact on intersection 120905</span></span>
-<span class="r-in"><span class="va">sline1</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"wkts/sline1.wkt"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">sline2</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"wkts/sline2.wkt"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">sline1</span>, <span class="va">sline2</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">rslt</span><span class="op">)</span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>        <span class="co"># added example of scale impact on intersection 120905</span></span></span>
+<span class="r-in"><span><span class="va">sline1</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"wkts/sline1.wkt"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sline2</span> <span class="op">&lt;-</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"wkts/sline2.wkt"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">sline1</span>, <span class="va">sline2</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">rslt</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "SpatialCollections"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"package")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rgeos"</span>
-<span class="r-in"><span class="fu">getScale</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">getScale</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1e+08</span>
-<span class="r-in"><span class="fu">setScale</span><span class="op">(</span><span class="fl">1e+6</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">sline1</span>, <span class="va">sline2</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">rslt</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">setScale</span><span class="op">(</span><span class="fl">1e+6</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">sline1</span>, <span class="va">sline2</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">rslt</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "SpatialLines"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"package")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "sp"</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">rslt</span>, <span class="st">"lines"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"Lines"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">rslt</span>, <span class="st">"lines"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"Lines"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 63</span>
-<span class="r-in"><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gUnion.html">gLineMerge</a></span><span class="op">(</span><span class="va">rslt</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">rslt</span>, <span class="st">"lines"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"Lines"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">rslt</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gUnion.html">gLineMerge</a></span><span class="op">(</span><span class="va">rslt</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">rslt</span>, <span class="st">"lines"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"Lines"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-in"><span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">setScale</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"><span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
-<span class="r-in"><span class="co"># Robert Hijmans difficult intersection case</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"test_cases/polys.RData"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># Robert Hijmans difficult intersection case</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"test_cases/polys.RData"</span>, package<span class="op">=</span><span class="st">"rgeos"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> output subgeometry 1, row.name: 109 294</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> subsubgeometry 0: Polygon</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> subsubgeometry 1: Polygon</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> subsubgeometry 2: LineString</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error in RGEOSBinTopoFunc(spgeom1, spgeom2, byid, id, drop_lower_td, unaryUnion_if_byid_false,  : </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Geometry collections may not contain other geometry collections</span>
-<span class="r-in"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 3.135474e-08 3.926317e-07 5.350546e-07 9.982584e-07 1.434509e-06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6] 2.087862e-06 1.212778e+03 3.117775e+05 1.424050e+06 1.700212e+06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [11] 7.269743e+06</span>
-<span class="r-in"><span class="va">oT</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">oW</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">oD</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="fl">1e-3</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">res1</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">oT</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_polyThreshold</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">oW</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_warnSlivers</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">oD</span> <span class="op">&lt;-</span> <span class="fu">get_RGEOS_dropSlivers</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="fl">1e-3</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">res1</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>1: MultiPolygon object 109 294 area 1.02961e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>2: MultiPolygon object 202 294 area 3.915e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>3: Polygon object 208 294 area 5.35055e-07</span>
@@ -194,61 +204,59 @@ set_RGEOS_CheckValidity takes an integer 0:2, 0L is no operation, 1L is check va
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 1 of object 202 294 area 1.43451e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 2 of object 202 294 area 3.92632e-07</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 0 of object 208 294 area 5.35055e-07</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 3.135474e-08 3.926317e-07 5.350546e-07 9.982584e-07 1.434509e-06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6] 2.087862e-06 1.212778e+03 3.117775e+05 1.424050e+06 1.700212e+06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [11] 7.269743e+06</span>
-<span class="r-in"><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">res2</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">res2</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, drop_lower_td<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>1: MultiPolygon object 109 294 area 1.02961e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>2: MultiPolygon object 202 294 area 3.915e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>3: Polygon object 208 294 area 5.35055e-07</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">res</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 3.135474e-08 3.926317e-07 5.350546e-07 9.982584e-07 1.434509e-06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6] 2.087862e-06 1.212778e+03 3.117775e+05 1.424050e+06 1.700212e+06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [11] 7.269743e+06</span>
-<span class="r-in"><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">oo</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gUnion.html">gUnaryUnion</a></span><span class="op">(</span><span class="va">res1</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"1"</span>, <span class="fl">3</span><span class="op">)</span>, <span class="st">"2"</span>, <span class="st">"3"</span>, <span class="st">"4"</span><span class="op">)</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">oo</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gUnion.html">gUnaryUnion</a></span><span class="op">(</span><span class="va">res1</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"1"</span>, <span class="fl">3</span><span class="op">)</span>, <span class="st">"2"</span>, <span class="st">"3"</span>, <span class="st">"4"</span><span class="op">)</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Too few points in geometry component at or near point 3001878.09776633 2416352.9858511998</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Too few points in geometry component at or near point 3000956.1033775401 2413481.790976</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Too few points in geometry component at or near point 3000956.1033775401 2413481.790976</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> res1 is invalid</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>1: Polygon object 109 294 area 9.67871e-07</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>2: Polygon object 202 294 area 2.02431e-06</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 0 of object 109 294 area 9.67871e-07</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 0 of object 202 294 area 2.02431e-06</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attempting to make res1 valid by zero-width buffering</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 1 of object 1 area 2.99218e-06</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">oo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">oo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.700212e+06 2.992178e-06 7.269743e+06 3.117775e+05 1.212778e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [6] 1.424050e+06</span>
-<span class="r-in"><span class="va">ooo</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">oo</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">ooo</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">oo</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>spgeom1 and spgeom2 have different proj4 strings</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 1 of object 294 1 area 2.99216e-06</span>
-<span class="r-in"><span class="fu"><a href="misc-gArea.html">gArea</a></span><span class="op">(</span><span class="va">ooo</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
+<span class="r-in"><span><span class="fu"><a href="misc-gArea.html">gArea</a></span><span class="op">(</span><span class="va">ooo</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     294 1     294 2     294 3     294 4 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1700211.9 7269743.1  312990.3 1424050.3 </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">ooo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">ooo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.700212e+06 2.992165e-06 7.269743e+06 3.117775e+05 1.212778e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [6] 1.424050e+06</span>
-<span class="r-in"><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">ooo</span> <span class="op">&lt;-</span> <span class="fu"><a href="topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">oo</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ooo</span> <span class="op">&lt;-</span> <span class="fu"><a href="rgeos-deprecated.html">gIntersection</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">oo</span>, byid<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="fl">2L</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>GEOS support is provided by the sf and terra packages among others</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>spgeom1 and spgeom2 have different proj4 strings</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Exterior ring 1 of object 294 1 area 2.99216e-06</span>
-<span class="r-in"><span class="fu"><a href="misc-gArea.html">gArea</a></span><span class="op">(</span><span class="va">ooo</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>CRS object has no comment</span>
+<span class="r-in"><span><span class="fu"><a href="misc-gArea.html">gArea</a></span><span class="op">(</span><span class="va">ooo</span>, byid<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     294 1     294 2     294 3     294 4 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1700211.9 7269743.1  312990.3 1424050.3 </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">ooo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">ooo</span>, <span class="st">"polygons"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/methods/slot.html" class="external-link">slot</a></span><span class="op">(</span><span class="va">p</span>, <span class="st">"Polygons"</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"area"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1700211.935 7269743.131  311777.515    1212.778 1424050.306</span>
-<span class="r-in"><span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="va">oT</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="va">oW</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="va">oD</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_polyThreshold</span><span class="op">(</span><span class="va">oT</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_warnSlivers</span><span class="op">(</span><span class="va">oW</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">set_RGEOS_dropSlivers</span><span class="op">(</span><span class="va">oD</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -263,7 +271,7 @@ set_RGEOS_CheckValidity takes an integer 0:2, 0L is no operation, 1L is check va
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

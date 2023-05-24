@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,8 +47,8 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">read.polyfile</span><span class="op">(</span><span class="va">filename</span>, nohole <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">write.polyfile</span><span class="op">(</span><span class="va">poly</span>, filename <span class="op">=</span> <span class="st">"GPCpoly.txt"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read.polyfile</span><span class="op">(</span><span class="va">filename</span>, nohole <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">write.polyfile</span><span class="op">(</span><span class="va">poly</span>, filename <span class="op">=</span> <span class="st">"GPCpoly.txt"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -56,10 +56,13 @@
     <dl><dt>filename</dt>
 <dd><p>the name of the file (a character string) from/to which
     data should be read/written.</p></dd>
-<dt>nohole</dt>
+
+  <dt>nohole</dt>
 <dd><p>Is this a polygon without holes?</p></dd>
-<dt>poly</dt>
+
+  <dt>poly</dt>
 <dd><p>an object of class <code>"gpc.poly"</code></p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -119,11 +122,18 @@
     </div>
     <div id="value">
     <h2>Value</h2>
-    <p>If <code>nohole</code> is <code>TRUE</code> (the default) <code>read.polyfile</code>  returns an  object of class <code>"gpc.poly.nohole"</code>.  This object has
-  the hole flag set to <code>FALSE</code> for all contours.  If <code>nohole</code> is
-<code>FALSE</code>, then an object of class <code>"gpc.poly"</code> is
-  returned.
-<code>write.polyfile</code> does not return anything useful.</p>
+    
+
+<p>If <code>nohole</code> is <code>TRUE</code> (the default) <code>read.polyfile</code></p>
+
+
+<p>returns an  object of class <code>"gpc.poly.nohole"</code>.  This object has
+  the hole flag set to <code>FALSE</code> for all contours.  If <code>nohole</code> is</p>
+<p></p>
+<p><code>FALSE</code>, then an object of class <code>"gpc.poly"</code> is
+  returned.</p>
+<p></p>
+<p><code>write.polyfile</code> does not return anything useful.</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -136,7 +146,7 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">## None right now.</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## None right now.</span></span></span>
 <span class="r-in"></span>
 </code></pre></div>
     </div>
@@ -152,7 +162,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

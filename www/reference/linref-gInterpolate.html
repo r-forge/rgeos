@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,22 +47,29 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gInterpolate</span><span class="op">(</span><span class="va">spgeom</span>, <span class="va">d</span>, normalized <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gInterpolate</span><span class="op">(</span><span class="va">spgeom</span>, <span class="va">d</span>, normalized <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>spgeom</dt>
 <dd><p>SpatialLines or SpatialLinesDataFrame object</p></dd>
+
+
 <dt>d</dt>
 <dd><p>Numeric vector specifying the distance along the line geometry</p></dd>
+
+
 <dt>normalized</dt>
 <dd><p>Logical determining if normalized distances
 should be used</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>SpatialPoints object</p>
+    
+
+<p>SpatialPoints object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -80,8 +87,8 @@ should be used</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">gInterpolate</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING(25 50, 100 125, 150 190)"</span><span class="op">)</span>,</span>
-<span class="r-in">             d<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, by <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, normalized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">gInterpolate</span><span class="op">(</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING(25 50, 100 125, 150 190)"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>             d<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, by <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, normalized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SpatialPoints:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           x         y</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  25.00000  50.00000</span>
@@ -105,7 +112,7 @@ should be used</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

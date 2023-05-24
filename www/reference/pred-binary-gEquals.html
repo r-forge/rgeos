@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,29 +47,36 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gEquals</span><span class="op">(</span><span class="va">spgeom1</span>, spgeom2 <span class="op">=</span> <span class="cn">NULL</span>, byid <span class="op">=</span> <span class="cn">FALSE</span>, returnDense<span class="op">=</span><span class="cn">TRUE</span>,
- checkValidity<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
-  <span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">spgeom1</span>, spgeom2 <span class="op">=</span> <span class="cn">NULL</span>, tol<span class="op">=</span><span class="fl">0.0</span>, byid <span class="op">=</span> <span class="cn">FALSE</span>,
- returnDense<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">spgeom1</span>, spgeom2 <span class="op">=</span> <span class="cn">NULL</span>, byid <span class="op">=</span> <span class="cn">FALSE</span>, returnDense<span class="op">=</span><span class="cn">TRUE</span>,</span>
+<span> checkValidity<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">spgeom1</span>, spgeom2 <span class="op">=</span> <span class="cn">NULL</span>, tol<span class="op">=</span><span class="fl">0.0</span>, byid <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span> returnDense<span class="op">=</span><span class="cn">TRUE</span>, checkValidity<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>spgeom1, spgeom2</dt>
 <dd><p>sp objects as defined in package sp. If spgeom2 is NULL then spgeom1 is compared to itself.</p></dd>
-<dt>byid</dt>
+
+  <dt>byid</dt>
 <dd><p>Logical vector determining if the function should be applied across ids (TRUE) or the entire object (FALSE) for spgeom1 and spgeom2</p></dd>
-<dt>tol</dt>
+
+  <dt>tol</dt>
 <dd><p>Numerical value of tolerance to use when assessing equivalence</p></dd>
-<dt>returnDense</dt>
+
+  <dt>returnDense</dt>
 <dd><p>default TRUE, if false returns a list of the length of spgeom1 of integer vectors listing the <code>1:length(spgeom2)</code> indices which would be TRUE in the dense logical matrix representation; useful when the sizes of the byid=TRUE returned matrix is very large and it is sparse; essential when the returned matrix would be too large</p></dd>
-<dt>checkValidity</dt>
+
+  <dt>checkValidity</dt>
 <dd><p>default FALSE; error meesages from GEOS do not say clearly which object fails if a topology exception is encountered. If this argument is TRUE, <code>gIsValid</code> is run on each in turn in an environment in which object names are available. If objects are invalid, this is reported and those affected are named</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code>gEquals</code> returns TRUE if geometries are "spatially equivalent" which requires that <code>spgeom1</code> is within <code>spgeom2</code> and <code>spgeom2</code> is within <code>spgeom1</code>, this ignores ordering of points within the geometries. Note that it is possible for geometries with different coordinates to be "spatially equivalent".
-<code>gEqualsExact</code> returns TRUE if geometries are "exactly equivalent" which requires that <code>spgeom1</code> and <code>spgeom1</code> are "spatially equivalent" and that their constituent points are in the same order.</p>
+    <p><code>gEquals</code> returns TRUE if geometries are "spatially equivalent" which requires that <code>spgeom1</code> is within <code>spgeom2</code> and <code>spgeom2</code> is within <code>spgeom1</code>, this ignores ordering of points within the geometries. Note that it is possible for geometries with different coordinates to be "spatially equivalent".</p>
+
+
+<p><code>gEqualsExact</code> returns TRUE if geometries are "exactly equivalent" which requires that <code>spgeom1</code> and <code>spgeom1</code> are "spatially equivalent" and that their constituent points are in the same order.</p>
     </div>
     <div id="note">
     <h2>Note</h2>
@@ -97,48 +104,48 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co"># p1 and p2 are spatially identical but not exactly identical due to point ordering</span></span>
-<span class="r-in"><span class="va">p1</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,1 0,1 1,0 1,0 0))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">p2</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((1 1,0 1,0 0,1 0,1 1))"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">p3</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0.01 0.01,1.01 0.01,1.01 1.01,0.01 1.01,0.01 0.01))"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">gEquals</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># p1 and p2 are spatially identical but not exactly identical due to point ordering</span></span></span>
+<span class="r-in"><span><span class="va">p1</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0 0,1 0,1 1,0 1,0 0))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p2</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((1 1,0 1,0 0,1 0,1 1))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p3</span><span class="op">=</span><span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"POLYGON((0.01 0.01,1.01 0.01,1.01 1.01,0.01 1.01,0.01 0.01))"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"><span class="fu">gEquals</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span>,tol<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span>,tol<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span>,tol<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">p1</span>,<span class="va">p3</span>,tol<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># pt1 and p2t are spatially identical but not exactly identical due to point ordering</span></span>
-<span class="r-in"><span class="va">pt1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(1 1,2 2,3 3)"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pt2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(3 3,2 2,1 1)"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pt3</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(1.01 1.01,2.01 2.01,3.01 3.01)"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">gEquals</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt2</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># pt1 and p2t are spatially identical but not exactly identical due to point ordering</span></span></span>
+<span class="r-in"><span><span class="va">pt1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(1 1,2 2,3 3)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pt2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(3 3,2 2,1 1)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pt3</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"MULTIPOINT(1.01 1.01,2.01 2.01,3.01 3.01)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"><span class="fu">gEquals</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span>,tol<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span>,tol<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span>,tol<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">pt1</span>,<span class="va">pt3</span>,tol<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># l2 contains a point that l1 does not</span></span>
-<span class="r-in"><span class="va">l1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING (10 10, 20 20)"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">l2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING (10 10, 15 15,20 20)"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">gEquals</span><span class="op">(</span><span class="va">l1</span>,<span class="va">l2</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># l2 contains a point that l1 does not</span></span></span>
+<span class="r-in"><span><span class="va">l1</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING (10 10, 20 20)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">l2</span> <span class="op">=</span> <span class="fu"><a href="wkt-functions.html">readWKT</a></span><span class="op">(</span><span class="st">"LINESTRING (10 10, 15 15,20 20)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">gEquals</span><span class="op">(</span><span class="va">l1</span>,<span class="va">l2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">l1</span>,<span class="va">l2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">gEqualsExact</span><span class="op">(</span><span class="va">l1</span>,<span class="va">l2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -153,7 +160,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

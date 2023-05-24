@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rgeos</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5-9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6-3</span>
       </span>
     </div>
 
@@ -47,9 +47,9 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Ring</span><span class="op">(</span><span class="va">coords</span>,ID<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
-<span class="fu">SpatialRings</span><span class="op">(</span><span class="va">RingList</span>, proj4string<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="fu">SpatialRingsDataFrame</span><span class="op">(</span><span class="va">sr</span>, <span class="va">data</span>, match.ID <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Ring</span><span class="op">(</span><span class="va">coords</span>,ID<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">SpatialRings</span><span class="op">(</span><span class="va">RingList</span>, proj4string<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">SpatialRingsDataFrame</span><span class="op">(</span><span class="va">sr</span>, <span class="va">data</span>, match.ID <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -57,23 +57,40 @@
     <dl><dt>coords</dt>
 <dd><p>2-column numeric matrix with coordinates; first point (row) should
 equal last coordinates (row); if the hole argument is not given, the status of the polygon as a hole or an island will be taken from the ring direction, with clockwise meaning island, and counter-clockwise meaning hole</p></dd>
+
 <dt>ID</dt>
 <dd><p>character vector of length one with identifier</p></dd>
+
 <dt>RingList</dt>
 <dd><p>list with objects of class <a href="class-Ring.html">Ring-class</a></p></dd>
+
 <dt>proj4string</dt>
 <dd><p>Object of class <code>"CRS"</code> holding a valid proj4 string</p></dd>
+
 <dt>sr</dt>
 <dd><p>object of class <a href="class-SpatialRings.html">SpatialRings-class</a></p></dd>
+
 <dt>data</dt>
 <dd><p>object of class <code>data.frame</code>; the number of rows in <code>data</code>
 should equal the number of <code>Lines</code> elements in <code>sl</code></p></dd>
+
 <dt>match.ID</dt>
 <dd><p>logical: (default TRUE): match SpatialLines member Lines ID slot values with data frame row names, and re-order the data frame rows if necessary</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code>Ring</code> returns object of class <code>Ring</code><code>SpatialRings</code> returns object of class <code>SpatialRings</code><code>SpatialRingsDataFrame</code> returns object of class <code>SpatialRingsDataFrame</code></p>
+    
+
+<p><code>Ring</code> returns object of class <code>Ring</code></p>
+
+
+<p><code>SpatialRings</code> returns object of class <code>SpatialRings</code></p>
+
+
+<p><code>SpatialRingsDataFrame</code> returns object of class <code>SpatialRingsDataFrame</code></p>
+
+
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -92,7 +109,7 @@ should equal the number of <code>Lines</code> elements in <code>sl</code></p></d
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
